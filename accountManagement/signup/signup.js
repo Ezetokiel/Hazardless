@@ -9,15 +9,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebas
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyAlg8K9qZtFTBEStq2xN9oIL6Zuvie3cjw",
-    authDomain: "codeverse-49af1.firebaseapp.com",
-    databaseURL: "https://codeverse-49af1-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "codeverse-49af1",
-    storageBucket: "codeverse-49af1.appspot.com",
-    messagingSenderId: "223559847168",
-    appId: "1:223559847168:web:d1b54946928a1eaa2937e5",
-    measurementId: "G-Q735VKS6EQ"
-  };
+    apiKey: "AIzaSyAzytdtUGpgzoh9sGbmb66TTmYL7iAScjg",
+    authDomain: "hazardless-c0fac.firebaseapp.com",
+    projectId: "hazardless-c0fac",
+    storageBucket: "hazardless-c0fac.appspot.com",
+    messagingSenderId: "740724267034",
+    appId: "1:740724267034:web:934170ebeedf06125699a3",
+    measurementId: "G-P3FCHJ4617",
+    databaseURL: "https://hazardless-c0fac-default-rtdb.asia-southeast1.firebasedatabase.app",
+};
   
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
