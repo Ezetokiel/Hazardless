@@ -25,22 +25,18 @@ function retrieveData() {
         if (snapshot.exists()) {
             const data = snapshot.val();
             const verifyAndRepairBox = document.querySelector('.box-container:nth-child(1) .box');
+            const completeBox = document.querySelector('.box-container:nth-child(2) .box'); // Add completeBox
 
             for (const incidentKey in data) {
                 if (Object.hasOwnProperty.call(data, incidentKey)) {
                     const incidentData = data[incidentKey];
-                    
-                    
+
                     const incidentElement = document.createElement('div');
                     incidentElement.classList.add('incident');
-
-                    
-                    
 
                     const infoElement = document.createElement('div');
                     infoElement.classList.add('incident-info');
 
-                   
                     const formattedInfo = `
                         Name: ${incidentKey}
                         Location: ${incidentData.Location}
@@ -48,38 +44,31 @@ function retrieveData() {
                         Time: ${incidentData.Time}
                         Potential Risks: ${incidentData['Potential risks']}
                     `;
-                    console.log(`${incidentKey}`)
+                    console.log(`${incidentKey}`);
 
-                    
                     infoElement.innerHTML = formattedInfo;
                     const buttonElement = document.createElement('button');
                     buttonElement.classList.add('view-button');
                     buttonElement.textContent = 'View Details';
-                
-                    
-                    buttonElement.id = `${incidentKey}`
-                    console.log(`${incidentKey}`)
+
+                    buttonElement.id = `${incidentKey}`;
                     buttonElement.addEventListener('click', () => {
-                        
-                        window.location.href = `moredetails.html?incidentKey=${incidentKey}`;
-                        window.location.href = 'moredetails.html'
-                        console.log(`${incidentKey}`)
-                        
+                        const url = `moredetails.html?incidentKey=${incidentKey}`;
+                        window.location.href = url;
                     });
-                    
+
                     incidentElement.appendChild(infoElement);
                     incidentElement.appendChild(buttonElement);
-                    verifyAndRepairBox.appendChild(incidentElement);
 
                     if (incidentData.Verification === false || incidentData.Resolved === false) {
                         verifyAndRepairBox.appendChild(incidentElement);
                     } else {
-                        completeBox.appendChild(incidentElement);
+                        completeBox.appendChild(incidentElement); // Append to completeBox
                     }
 
-                    //linebreak
                     const lineBreak = document.createElement('hr');
                     verifyAndRepairBox.appendChild(lineBreak);
+                    completeBox.appendChild(lineBreak.cloneNode()); // Append line break to completeBox
                 }
             }
         } else {
@@ -91,6 +80,7 @@ function retrieveData() {
 }
 
 retrieveData();
+
 
 
 
