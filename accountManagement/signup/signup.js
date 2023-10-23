@@ -30,10 +30,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebas
   
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
-  try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    await set(ref(database, 'users/' + user.uid), {
-            email: email
-        });
-    alert('user created!')
-    window.login.href = '../admindashboard.html'
+      try {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          await set(ref(database, 'users/' + user.uid), {
+              email: email
+          });
+          alert('user created!')
+          window.login.href = '../login/login.html'
+      } catch (error) {
+            const errorMessage = error.message;
+            alert(errorMessage);
+      }
+  });
