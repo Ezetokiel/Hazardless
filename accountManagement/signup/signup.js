@@ -30,11 +30,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebas
   
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
-      var username = document.getElementById('username').value;
   try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     await set(ref(database, 'users/' + user.uid), {
-            username: username,
             email: email
         });
     alert('user created!')
