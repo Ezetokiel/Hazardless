@@ -53,7 +53,7 @@ login.addEventListener('click', (e) => {
                         localStorage.setItem('authToken', idToken);
                         alert('Logged-in successfully!')
                         // Redirect or update UI as needed
-                        window.location.href = "admindashboard.html"; //replace immediately
+                        window.location.href = "../../admindashboard.html"; //replace immediately
                     } else {
                         alert('User data not found.');
                     }
