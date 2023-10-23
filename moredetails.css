@@ -1,0 +1,13 @@
+.incident-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.incident-info {
+    margin-top: 20px;
+}
+
+.incident-info div {
+    margin: 5px 0;
+}
