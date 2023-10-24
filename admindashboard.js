@@ -38,11 +38,10 @@ function retrieveData() {
                     infoElement.classList.add('incident-info');
 
                     const formattedInfo = `
-                        Name: ${incidentKey}
-                        Location: ${incidentData.Location}
-                        Date: ${incidentData.Date}
-                        Time: ${incidentData.Time}
-                        Potential Risks: ${incidentData['Potential risks']}
+                        <p>Location: ${incidentData.Location}</p>
+                        <p>Date: ${incidentData.Date}</p>
+                        <p>Time: ${incidentData.Time}</p>
+                        <p>Potential Risks: ${incidentData['Potential risks']}</p>
                     `;
                     console.log(`${incidentKey}`);
 
@@ -68,7 +67,6 @@ function retrieveData() {
 
                     const lineBreak = document.createElement('hr');
                     verifyAndRepairBox.appendChild(lineBreak);
-                    completeBox.appendChild(lineBreak.cloneNode()); // Append line break to completeBox
                 }
             }
         } else {
